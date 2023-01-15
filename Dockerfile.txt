@@ -1,0 +1,10 @@
+FROM python:3
+
+WORKDIR /usr/src/getweather
+
+COPY ./requirements.txt /usr/src/getweather
+COPY ./getweather.py /usr/src/getweather
+
+RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r requirements.txt
+
+CMD["python3", "./getweather.py"]
